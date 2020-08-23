@@ -1,0 +1,33 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-bar">
+  <h3 class="w3-bar-item w3-left w3-allerta">User Registration Form</h3>
+  <a class="w3-bar-item w3-right w3-btn w3-black w3-allerta w3-round-xlarge" href="/customer_portal/login/">Login</a>
+  <a class="w3-bar-item w3-right w3-btn w3-black w3-allerta w3-round-xlarge" href="/">Home</a>
+</div>
+
+<div class="w3-display-container"  style="height:1000px;">
+<div class="w3-display-middle">
+
+<form class="w3-container" action="/customer_portal/registration/" method="POST">{% csrf_token %}
+  <lable class="w3-allerta">FirstName : </lable><input class="w3-input w3-border w3-allerta w3-round-large" type="text" name="firstname" placeholder="Name"><br><br>
+  <lable class="w3-allerta">LastName : </lable><input class="w3-input w3-border w3-allerta w3-round-large" type="text" name="lastname" placeholder="Lastname"><br><br>
+  <lable class="w3-allerta">Username : </lable><input class="w3-input w3-border w3-allerta w3-round-large" type="text" name="username" placeholder="Username"><br><br>
+  <lable class="w3-allerta">Password : </lable><input class="w3-input w3-border w3-allerta w3-round-large" type="password" name="password" placeholder="Password"><br><br>
+  <lable class="w3-allerta">Email : </lable><input class="w3-input w3-border w3-allerta w3-round-large" type="email" name="email" placeholder="Example@gmail.com"><br><br>
+  <lable class="w3-allerta">Mobile : </lable><input class="w3-input w3-border w3-allerta w3-round-large" type="text" minlength="10" maxlength="12" name="mobile" placeholder="Ex:8992979420"><br><br>
+  <lable class="w3-allerta">City : </lable><input class="w3-input w3-border w3-allerta w3-round-large" type="text" name="city" placeholder="City name"><br><br>
+  <lable class="w3-allerta">Pincode : </lable><input class="w3-input w3-border w3-allerta w3-round-large" type="text" minlength="6" maxlength="6" name="pincode" placeholder="Ex:500000"><br><br>
+  <input class="w3-btn w3-black w3-large w3-round-xxlarge w3-allerta" type="submit" value="Register"><br><br>
+</form>
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black w3-serif">Customer Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-white w3-allerta w3-round-xlarge w3-right" href="/customer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-white w3-allerta w3-round-xlarge w3-right" href="/customer_portal/manage/">Manage</a>
+  <a class="w3-ber-item w3-btn w3-white w3-allerta w3-round-xlarge w3-right" href="/customer_portal/search/">Search for cars</a>
+</div>
+{% csrf_token %}
+
+<div class="w3-display-container" style="height:400px;">
+  <div class="w3-display-middle">
+<h3>Order Completed</h3>
+MR:{{user.username}} Your  vehicle order was successful !<br><br>
+total rent : {{order.rent}} Rs.<br><br>
+vehicle : {{order.vehicle.car_name}}<br><br>
+duration : {{order.days}} days<br><br>
+car-dealer : {{order.car_dealer.car_dealer.first_name}} {{order.car_dealer.car_dealer.last_name}}<br><br>
+car-dealer contact no: {{order.car_dealer.mobile}}<br><br>
+</div>
+</div>
+{% endblock %}

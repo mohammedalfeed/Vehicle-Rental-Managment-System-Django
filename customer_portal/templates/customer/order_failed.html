@@ -1,0 +1,17 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-allerta w3-black">Customer Page: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-white w3-round-xlarge w3-allerta w3-right" href="/customer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-white w3-round-xlarge w3-allerta w3-right" href="/customer_portal/manage/">Manage</a>
+  <a class="w3-ber-item w3-btn w3-white w3-round-xlarge w3-allerta w3-right" href="/customer_portal/search/">Search for cars</a>
+</div>
+<div class="w3-container w3-center" style="padding:60px;">
+{% endblock %}

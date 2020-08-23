@@ -1,0 +1,26 @@
+{% extends 'car_dealer/base.html' %}
+{% block content %}
+{% csrf_token %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-bar w3-black w3-large">
+  <div class="w3-bar-item w3-left w3-black w3-allerta">Car Dealer Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-white w3-allerta w3-round-xxlarge w3-right" href="/car_dealer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-white w3-allerta w3-round-xxlarge w3-right " href="/car_dealer_portal/auth/">Home</a>
+  <a class="w3-bar-item w3-btn w3-white w3-allerta w3-round-xxlarge w3-right" href="/car_dealer_portal/order_list/">Orders</a>
+  <a class="w3-bar-item w3-btn w3-white w3-allerta w3-round-xxlarge w3-right" href="/car_dealer_portal/manage_vehicles/">Vehicles</a>
+  <a class="w3-bar-item w3-btn w3-white w3-allerta w3-round-xxlarge w3-right" href="/car_dealer_portal/history/">Wallet</a>
+</div>
+
+<div class="w3-display-container" style="height:300px;">
+  <div class="w3-display-middle">
+    <p class="w3-allerta">Vehicle added successfully !</p>
+    <a href="/car_dealer_portal/index/" class="w3-allerta w3-round-xxlarge ">go back to home page</a>
+</div>
+</div>
+{% endblock %}

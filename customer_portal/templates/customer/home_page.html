@@ -1,0 +1,25 @@
+
+{% extends 'customer/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black w3-allerta">Customer Page: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-white w3-round-xlarge w3-allerta w3-right" href="/customer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-white w3-round-xlarge w3-right w3-allerta" href="/customer_portal/manage/">Manage</a>
+</div>
+
+<div class="w3-container w3-center w3-large w3-black w3-allerta" style="padding:20px;">Welcome {{user.username}} ! You shall drive the vehicle of your dreams.</div>
+<div class="w3-display-container w3-center" style="height:500px;;">
+    <img src="{% static "images/145-1453096_bike-and-car-racing.jpg" %}" width="1400px" height="640px">
+  <div class="w3-display-middle">
+    <a class="w3-btn w3-black w3-allerta w3-xlarge w3-round-xxlarge" href="/customer_portal/search/">Search for vehicle</a>
+  </div>
+</div>
+{% endblock %}

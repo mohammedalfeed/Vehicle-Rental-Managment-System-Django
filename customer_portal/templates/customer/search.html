@@ -1,0 +1,31 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black w3-allerta">Customer Page: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-round-xlarge w3-white w3-allerta w3-right" href="/customer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-white w3-round-xlarge w3-allerta w3-right" href="/customer_portal/manage/">Manage</a>
+</div>
+
+<div class="w3-display-container" style="height:300px;">
+  <img src="{% static "images/A13dCjJ14SL.jpg" %}" width="1000px" height="640px">
+  <div class="w3-display-right">
+<form class="w3-container" action="/customer_portal/search_results/" method="post">
+  {% csrf_token %}
+  <br><br>
+  <lable class="w3-allerta ">City :</lable> <input class="w3-input w3-border w3-round-large" type="text" name="city"><br><br>
+  <input class="w3-btn w3-black w3-allerta w3-large w3-round-xxlarge" type="submit" value="search">
+</form>
+
+</div>
+</div>
+
+{% endblock %}

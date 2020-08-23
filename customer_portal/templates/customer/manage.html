@@ -1,0 +1,45 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black w3-allerta">Customer Page: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-white w3-allerta w3-round-xlarge w3-right" href="/customer_portal/logout/">logout</a>
+  <a class="w3-ber-item w3-btn w3-white w3-allerta w3-round-xlarge w3-right" href="/customer_portal/search/">Search for vehicles</a>
+</div>
+<h4 class="w3-center w3-allerta" style="padding-top:50">Your orders</h4>
+<div class="w3-center" style="padding:100px;">
+<table class="w3-table w3-serif w3-striped w3-center">
+{% for order in od %}
+
+  <tr>
+    <td>name : {{order.vehicle.car_name}}</td>
+    <td>days : {{order.days}}</td>
+    <td>rent : {{order.rent}}</td>
+    <td>capacity : {{order.vehicle.capacity}}</td>
+    <td>description : {{order.vehicle.description}}</td>
+    <td>pincode : {{order.vehicle.area.pincode}}</td>
+    <td><form action = "/customer_portal/delete/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{order.id}}">
+          <input class="w3-btn w3-black w3-allerta w3-round-xxlarge" type="submit" value="delete">
+        </form>
+    </td>
+    <td>
+      <form action = "/customer_portal/update/" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{order.id}}">
+        <input class="w3-btn w3-black w3-allerta w3-round-xxlarge" type="submit" value="update">
+      </form>
+    </td>
+  </tr>
+
+{% endfor %}
+</table>
+</div>
+{% endblock %}

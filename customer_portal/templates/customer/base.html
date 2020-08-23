@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+<head>
+  <title>VRS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+</head>
+<link rel="stylesheet" href="{% static 'css/w3.css' %}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<body>
+  <div class="w3-container w3-black">
+    <h1 class="w3-center w3-allerta">Online Vehicle Rental System<h1>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+
+</body>
+</html>

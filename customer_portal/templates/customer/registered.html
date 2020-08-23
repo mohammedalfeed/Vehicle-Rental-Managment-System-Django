@@ -1,0 +1,24 @@
+{% extends 'car_dealer/base.html' %}
+{% block content %}
+{% csrf_token %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-bar w3-black">
+  <div class="w3-bar-item w3-left w3-allerta">Registration Form</div>
+  <a class="w3-bar-item w3-right w3-btn w3-white w3-round-xxlarge w3-allerta" href="/customer_portal/login/">Login</a>
+  <a class="w3-bar-item w3-right w3-btn w3-white w3-round-xxlarge w3-allerta" href="/">Home</a>
+</div>
+<div class="w3-center">
+<p class="w3-large w3-allerta">
+Registered successfully !
+</p>
+<p class="w3-large w3-allerta">
+Click here to login to search for vehicles <a class="w3-btn w3-black w3-round-xxlarge w3-allerta" href="/customer_portal/login/">login page<a> and login !
+</p>
+</div>
+{% endblock %}

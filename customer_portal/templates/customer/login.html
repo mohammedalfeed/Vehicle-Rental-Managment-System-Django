@@ -1,0 +1,30 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+
+{% if form.errors %}
+
+{% endif %}
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+<div class="w3-display-container" style="height:500px;">
+  <h3 class="w3-allerta w3-border-large w3-round-xxlarge w3-center">Login </h3>
+  <div class="w3-display-middle">
+<form class="w3-container" action="/customer_portal/auth/" method="POST">{% csrf_token %}
+  <lable class="w3-allerta">Username :</lable> <input class="w3-input w3-border w3-allerta w3-round-large" type="text" name="username"><br><br>
+  <lable class="w3-allerta">Password :</lable> <input class="w3-input w3-border w3-allerta w3-round-large" type="password" name="password"><br><br>
+  <input class="w3-btn w3-black w3-allerta w3-round-xxlarge" type="submit">
+</form><br><br>
+<div class="w3-container">
+<a class="w3-btn w3-round-xxlarge w3-allerta w3-black" href="/customer_portal/register/">new user ? sign up here</a>
+<a class="w3-btn w3-round-xxlarge w3-allerta w3-black" href="/">Home</a>
+</div>
+</div>
+</div>
+{% endblock %}
